@@ -1,0 +1,396 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% An example of a lab report write-up.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This is a combination of several labs that I have done in the past for
+% Computer Engineering, so it is not to be taken literally, but instead used as
+% a great starting template for your own lab write up.  When creating this
+% template, I tried to keep in mind all of the functions and functionality of
+% LaTeX that I spent a lot of time researching and using in my lab reports and
+% include them here so that it is fairly easy for students first learning LaTeX
+% to jump on in and get immediate results.  However, I do assume that the
+% person using this guide has already created at least a "Hello World" PDF
+% document using LaTeX (which means it's installed and ready to go).
+%
+% My preference for developing in LaTeX is to use the LaTeX Plugin for gedit in
+% Linux.  There are others for Mac and Windows as well (particularly MikTeX).
+% Another excellent plugin is the Calc2LaTeX plugin for the OpenOffice suite.
+% It makes it very easy to create a large table very quickly.
+%
+% Professors have different tastes for how they want the lab write-ups done, so
+% check with the section layout for your class and create a template file for
+% each class (my recommendation).
+%
+% Also, there is a list of common commands at the bottom of this document.  Use
+% these as a quick reference.  If you'd like more, you can view the "LaTeX Cheat
+% Sheet.pdf" included with this template material.
+%
+% (c) 2009 Derek R. Hildreth <derek@derekhildreth.com> http://www.derekhildreth.com
+% This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/1.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[aps,letterpaper,10pt]{revtex4}
+\input kvmacros % For Karnaugh Maps (K-Maps)
+
+\usepackage{graphicx} % For images
+\usepackage{float}    % For tables and other floats
+\usepackage{verbatim} % For comments and other
+\usepackage{amsmath}  % For math
+\usepackage{amssymb}  % For more math
+\usepackage{fullpage} % Set margins and place page numbers at bottom center
+\usepackage{listings} % For source code
+\usepackage{subfig}   % For subfigures
+\usepackage[usenames,dvipsnames]{color} % For colors and names
+\usepackage[pdftex]{hyperref}           % For hyperlinks and indexing the PDF
+\hypersetup{ % play with the different link colors here
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue % set to black to prevent printing blue links
+}
+
+\definecolor{mygrey}{gray}{.96} % Light Grey
+\lstset{
+	language=[ISO]C++,              % choose the language of the code ("language=Verilog" is popular as well)
+   tabsize=3,							  % sets the size of the tabs in spaces (1 Tab is replaced with 3 spaces)
+	basicstyle=\tiny,               % the size of the fonts that are used for the code
+	numbers=left,                   % where to put the line-numbers
+	numberstyle=\tiny,              % the size of the fonts that are used for the line-numbers
+	stepnumber=2,                   % the step between two line-numbers. If it's 1 each line will be numbered
+	numbersep=5pt,                  % how far the line-numbers are from the code
+	backgroundcolor=\color{mygrey}, % choose the background color. You must add \usepackage{color}
+	%showspaces=false,              % show spaces adding particular underscores
+	%showstringspaces=false,        % underline spaces within strings
+	%showtabs=false,                % show tabs within strings adding particular underscores
+	frame=single,	                 % adds a frame around the code
+	tabsize=3,	                    % sets default tabsize to 2 spaces
+	captionpos=b,                   % sets the caption-position to bottom
+	breaklines=true,                % sets automatic line breaking
+	breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+	%escapeinside={\%*}{*)},        % if you want to add a comment within your code
+	commentstyle=\color{BrickRed}   % sets the comment style
+}
+
+% Make units a little nicer looking and faster to type
+\newcommand{\Hz}{\textsl{Hz}}
+\newcommand{\KHz}{\textsl{KHz}}
+\newcommand{\MHz}{\textsl{MHz}}
+\newcommand{\GHz}{\textsl{GHz}}
+\newcommand{\ns}{\textsl{ns}}
+\newcommand{\ms}{\textsl{ms}}
+\newcommand{\s}{\textsl{s}}
+
+
+
+% TITLE PAGE CONTENT %%%%%%%%%%%%%%%%%%%%%%%%
+% Remember to fill this section out for each
+% lab write-up.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\labno}{05}
+\newcommand{\labtitle}{AU 332 Artificial Intelligence: Principles and Techniques}
+\newcommand{\authorname}{WangChunhui (517021910047)}
+\newcommand{\hw}{4}
+% END TITLE PAGE CONTENT %%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}  % START THE DOCUMENT!
+
+
+% TITLE PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% If you'd like to change the content of this,
+% do it in the "TITLE PAGE CONTENT" directly above
+% this message
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+\begin{center}
+{\Large \textsc{\labtitle} \\ \vspace{4pt}}
+\rule[13pt]{\textwidth}{1pt} \\ \vspace{150pt}
+{\large By: \authorname \\ \vspace{10pt}
+HW\#: \hw \\ \vspace{10pt}
+\today}
+\end{center}
+\end{titlepage}
+% END TITLE PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%No Text Here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Purpose}
+\begin{comment}
+This is a lab template which has a ton of different things which are useful in writing lab write-ups in the Computer Eningeering field.  This is demonstrating the comment block. Don't be overwhelmed, it may seem like a lot to take in at a time, but it's worth spending the time learning it.
+\end{comment}
+The goal of this week’s lab is to review the four methods of search including bfs,dfs,ucs and astar search.And it needs you to realize those algorithms with python.Besides that,you also need calculate the complexity or path with the medthods mentuone below.   
+
+\vspace{3mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Equipment}
+There is a minimal amount of equipment to be used in this homework.  The few requirements are listed below:
+	\begin{itemize}
+		\item python
+		\item queue (priority queue and LIFO queue ))
+	\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{homework}
+\subsection{Graph Traversal}
+	\begin{figure}[H]
+		\centering
+			  \subfloat[DFS]{\label{fig:Per6A}\includegraphics[width=0.4\textwidth]{dfsp.jpg}} \\
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+	\subfloat[BFS]{\label{fig:Per6A}\includegraphics[width=0.4\textwidth]{bfsp.jpg}} \\
+	
+	
+\end{figure}
+\begin{itemize}
+\item bfs time complexy O(n*d)
+\item bfs space complexy O(n)
+\item dfs time complexy O(n*d)
+\item dfs space complexy O(n)
+\end{itemize}
+\subsection{Uniform Cost Search Algorithm}
+\begin{itemize}
+\item step1 {'A': None}	 \newline [(0, 'A')]
+\item step2 {'A': None, 'B': 'A'} \newline [(10, 'B')]
+\item step3 {'A': None, 'B': 'A', 'D': 'A'} \newline [(10, 'B'), (20, 'D')]
+\item step4 {'A': None, 'B': 'A', 'D': 'A', 'C': 'A'} \newline [(3, 'C'), (20, 'D'), (10, 'B')]
+\item step5{'A': None, 'B': 'C', 'D': 'A', 'C': 'A'} \newline [(5, 'B'), (20, 'D'), (10, 'B')]
+\item step6 {'A': None, 'B': 'C', 'D': 'A', 'C': 'A', 'E': 'C'} \newline[(5, 'B'), (18, 'E'), (10, 'B'), (20, 'D')]
+\item step7 {'A': None, 'B': 'C', 'D': 'B', 'C': 'A', 'E': 'C'}\newline[(10, 'B'), (10, 'D'), (20, 'D'), (18, 'E')]
+
+\end{itemize}
+\subsection{A* Algorithm}
+\begin{itemize}
+\item heuistic funcition = Euclidean distances
+\item step1 [(1,2)]\newline [(4,(2,2)),(5.12,(1,1)),
+(5.12,(1,3)),(6,(0,2))]
+\item step2 [(1,2),(2,2)]\newline [(5.16,(2,1)),(5.16,(2,3)),(5.12,(1,1)),
+(5.12,(1,3)),(6,(0,2))]
+\item step3 [(1,2),(2,2),(1,1)] \newline 
+ [(6.47,(1,0)),(7.09,(0,1)),(5.16,(2,1)),(5.16,(2,3)),
+ (5.12,(1,3)),(6,(0,2))]
+\item step4 [(1,2),(2,2),(1,1),(1,3)]\newline  [(6.47,(1,4)),(7.09,(0,3)),(6.47,(1,0)),(7.09,(0,1)),(5.16,(2,1)),(5.16,(2,3)),
+(6,(0,2))]
+\item step5 [(1,2),(2,2),(1,1),(1,3),(2,1)]\newline 
+[(6.6,(2,0)),(6.47,(1,4)),(7.09,(0,3)),(6.47,(1,0)),(7.09,(0,1)),(5.16,(2,3)),
+(6,(0,2))]
+\item step6 [(1,2),(2,2),(1,1),(1,3),(2,1),(2,3)]\newline
+[(6.6,(2,4)),(6.6,(2,0)),(6.47,(1,4)),(7.09,(0,3)),(6.47,(1,0)),(7.09,(0,1)),
+(6,(0,2))]
+\item step7 [(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2)]\newline
+[(6.6,(2,4)),(6.6,(2,0)),(6.47,(1,4)),(7.09,(0,3)),(6.47,(1,0)),(7.09,(0,1))]
+\item step8 [(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2),(1,4)]\newline
+[(8.38,(0,4)),(6.6,(2,4)),(6.6,(2,0)),(7.09,(0,3)),(6.47,(1,0)),(7.09,(0,1))]
+\item step9 [(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2),(1,4),(1,0)]\newline
+[(8.38,(0,0)),(8.38,(0,4)),(6.6,(2,4)),(6.6,(2,0)),(7.09,(0,3)),(7.09,(0,1))]
+\item step10 [(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2),(1,4),(1,0),(2,0)]\newline
+[(6.82,(3,0)),(8.38,(0,0)),(8.38,(0,4)),(6.6,(2,4)),(7.09,(0,3)),(7.09,(0,1))]
+\item step11 [(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2),(1,4),(1,0),(2,0),(2,4)]\newline
+[(6.82,(3,4)),(6.82,(3,0)),(8.38,(0,0)),(8.38,(0,4)),(7.09,(0,3)),(7.09,(0,1))]
+\item step12 [(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2),(1,4),(1,0),(2,0),(2,4),(3,0)]\newline
+[(7.23,(4,0)),(6.82,(3,4)),(8.38,(0,0)),(8.38,(0,4)),(7.09,(0,3)),(7.09,(0,1))]
+\item step13
+[(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2),(1,4),(1,0),(2,0),(2,4),(3,0),(3,4)]\newline
+[(7.23,(4,4),(7.23,(4,0)),(8.38,(0,0)),(8.38,(0,4)),(7.09,(0,3)),(7.09,(0,1))]
+\item step14
+[(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2),(1,4),(1,0),(2,0),(2,4),(3,0),(3,4),(0.3)]\newline
+[(7.23,(4,4),(7.23,(4,0)),(8.38,(0,0)),(8.38,(0,4)),(7.09,(0,1))]
+\item step15
+[(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2),(1,4),(1,0),(2,0),(2,4),(3,0),(3,4),(0.3),(0,1)]\newline
+[(7.23,(4,4),(7.23,(4,0)),(8.38,(0,0)),(8.38,(0,4))]
+\item step16
+[(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2),(1,4),(1,0),(2,0),(2,4),(3,0),(3,4),(0.3),(0,1),(4,0)]\newline
+[(7.41,(4,1)),(8,(5,0)),(7.23,(4,4),(8.38,(0,0)),(8.38,(0,4))]
+\item step17
+[(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2),(1,4),(1,0),(2,0),(2,4),(3,0),(3,4),(0.3),(0,1),(4,0),(4,4)]\newline
+[(7.41,(4,3)),(8,(5,4)),(7.41,(4,1)),(8,(5,0)),(8.38,(0,0)),(8.38,(0,4))]
+\item step18
+[(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2),(1,4),(1,0),(2,0),(2,4),(3,0),(3,4),(0.3),(0,1),(4,0),(4,4),(4,3)]\newline
+[(8,(4,2))(8,(5,3)),(8,(5,4)),(7.41,(4,1)),(8,(5,0)),(8.38,(0,0)),(8.38,(0,4))]
+\item step19
+[(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2),(1,4),(1,0),(2,0),(2,4),(3,0),(3,4),(0.3),(0,1),(4,0),(4,4),(4,3),(4,1)]\newline
+[(8,(5,1)),(8,(4,2)),(8,(5,3)),(8,(5,4)),(8,(5,0)),(8.38,(0,0)),(8.38,(0,4))]
+\item step20
+[(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2),(1,4),(1,0),(2,0),(2,4),(3,0),(3,4),(0.3),(0,1),(4,0),(4,4),(4,3),(4,1),(5,1)]\newline
+[(8,(5,2)),(8,(4,2)),(8,(5,3)),(8,(5,4)),(8,(5,0)),(8.38,(0,0)),(8.38,(0,4))]
+\item step20
+[(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2),(1,4),(1,0),(2,0),(2,4),(3,0),(3,4),(0.3),(0,1),(4,0),(4,4),(4,3),(4,1),(5,1)]\newline
+[(9.41,(6,1)),(8,(5,2)),(8,(4,2)),(8,(5,3)),(8,(5,4)),(8,(5,0)),(8.38,(0,0)),(8.38,(0,4))]
+\item step21
+[(1,2),(2,2),(1,1),(1,3),(2,1),(2,3),(0,2),(1,4),(1,0),(2,0),(2,4),(3,0),(3,4),(0.3),(0,1),(4,0),(4,4),(4,3),(4,1),(5,1),(5,2)]\newline
+[(9.41,(6,1)),(8,(4,2)),(8,(5,3)),(8,(5,4)),(8,(5,0)),(8.38,(0,0)),(8.38,(0,4))]
+\end{itemize}
+\subsection{Codes}
+	\begin{figure}[H]
+	\centering
+	\subfloat[reconstructpath]{\label{fig:Per6A}\includegraphics[width=0.8\textwidth]{reconstructpath.png}} \\
+    \end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[breadth first search]{\label{fig:Per6A}\includegraphics[width=0.8\textwidth]{breadthfirstsearch.png}} \\
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[depth first search]{\label{fig:Per6A}\includegraphics[width=0.8\textwidth]{depthfirstsearch.png}} \\
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[Results of bfs and dfs]{\label{fig:Per6A}\includegraphics[width=0.8\textwidth]{bfsresults.png}} \\
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[uniform cost search]{\label{fig:Per6A}\includegraphics[width=0.8\textwidth]{ucs.png}} \\
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[Results of ucs]{\label{fig:Per6A}\includegraphics[width=0.8\textwidth]{ucsresults.png}} \\
+	
+\end{figure}
+\begin{figure}[H]
+\centering
+\subfloat[heuristic]{\label{fig:Per6A}\includegraphics[width=0.8\textwidth]{heu.png}} \\
+
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[A star search]{\label{fig:Per6A}\includegraphics[width=0.8\textwidth]{ast.png}} \\
+	
+\end{figure}
+\begin{figure}[H]
+\centering
+\subfloat[Results of astar search]{\label{fig:Per6A}\includegraphics[width=0.8\textwidth]{astre.png}} \\
+
+\end{figure}
+\subsection{bonus solution }
+
+ \subsubsection{bonus1 solution }
+
+	\begin{figure}[H]
+		\centering
+		\subfloat[Extra credit
+		5.1]{\label{fig:Per6A}\includegraphics[width=0.8\textwidth]{bonus2.png}} \\
+		
+	\end{figure}
+	
+ \subsubsection{bonus2 solution }	
+	\item It can be proved that the graph satisﬁes the consistency of heuristics. because what I choose to be the heuristics is Euclidean distances.As we all know,if h(A)$\leqslant$ cost(A to C)+h(C).	The heuristics is consist.In this graph,the cost of every step is 1,so cost(A to C) $\geqslant$ Euclidean distances(A to C).Because of Triangle law,h(A)-h(C) $\leqslant$ Euclidean distances(A to C)$\leqslant$ cost(A to C). 
+	 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document} % DONE WITH DOCUMENT!
+
+
+%%%%%%%%%%
+
+%%%%%%%%%%
+
+
+% INSERT SOURCE CODE
+\lstset{language=Verilog, tabsize=3, backgroundcolor=\color{mygrey}, basicstyle=\small, commentstyle=\color{BrickRed}}
+\lstinputlisting{MODULE.v}
+
+% TEXT TABLE
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|c|c|l|}
+	x & x & x & x \\ \hline
+	x & x & x & x \\
+	x & x & x & x \\ \hline
+\end{tabular}
+\caption{Caption}
+\label{label}
+\end{center}
+\end{table}
+
+% MATHMATICAL ENVIRONMENT
+$ 8 = 2 \times 4 $
+
+% CENTERED FORMULA
+\[  \]
+
+% NUMBERED EQUATION
+\begin{equation}
+	
+\end{equation}
+
+% ARRAY OF EQUATIONS (The splat supresses the numbering)
+\begin{align*}
+	
+\end{align*}
+
+% NUMBERED ARRAY OF EQUATIONS
+\begin{align}
+	
+\end{align}
+
+% ACCENTS
+\dot{x} % dot
+\ddot{x} % double dot
+\bar{x} % bar
+\tilde{x} % tilde
+\vec{x} % vector
+\hat{x} % hat
+\acute{x} % acute
+\grave{x} % grave
+\breve{x} % breve
+\check{x} % dot (cowboy hat)
+
+% FONTS
+\mathrm{text} % roman
+\mathsf{text} % sans serif
+\mathtt{text} % Typewriter
+\mathbb{text} % Blackboard bold
+\mathcal{text} % Caligraphy
+\mathfrak{text} % Fraktur
+
+\textbf{text} % bold
+\textit{text} % italic
+\textsl{text} % slanted
+\textsc{text} % small caps
+\texttt{text} % typewriter
+\underline{text} % underline
+\emph{text} % emphasized
+
+\begin{tiny}text\end{tiny} % Tiny
+\begin{scriptsize}text\end{scriptsize} % Script Size
+\begin{footnotesize}text\end{footnotesize} % Footnote Size
+\begin{small}text\end{small} % Small
+\begin{normalsize}text\end{normalsize} % Normal Size
+\begin{large}text\end{large} % Large
+\begin{Large}text\end{Large} % Larger
+\begin{LARGE}text\end{LARGE} % Very Large
+\begin{huge}text\end{huge}   % Huge
+\begin{Huge}text\end{Huge}   % Very Huge
+
+
+% GENERATE TABLE OF CONTENTS AND/OR TABLE OF FIGURES
+% These seem to have some issues with the "revtex4" document class.  To use, change
+% the very first line of this document to "article" like this:
+% \documentclass[aps,letterpaper,10pt]{article}
+\tableofcontents
+\listoffigures
+\listoftables
+
+% INCLUDE A HYPERLINK OR URL
+\url{http://www.derekhildreth.com}
+\href{http://www.derekhildreth.com}{Derek Hildreth's Website}
+
+% FOR MORE, REFER TO THE "LINUX CHEAT SHEET.PDF" FILE INCLUDED!
